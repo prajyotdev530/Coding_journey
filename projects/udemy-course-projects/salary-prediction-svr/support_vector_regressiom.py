@@ -17,4 +17,4 @@ print(sc2.inverse_transform(svr_model.predict(sc.transform([[6.5]])).reshape(-1,
 plt.scatter(sc.inverse_transform(X),sc2.inverse_transform(Y.reshape(-1,1)),color='red')
 plt.scatter([[6.5]],sc2.inverse_transform(svr_model.predict(sc.transform([[6.5]])).reshape(-1,1)),color='blue',)
 plt.plot(sc.inverse_transform(X),sc2.inverse_transform(svr_model.predict(X).reshape(-1,1)),color='green')
-plt.show()
+plt.show() 

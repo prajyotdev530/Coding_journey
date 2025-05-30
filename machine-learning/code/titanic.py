@@ -1,6 +1,6 @@
 import seaborn as sns
 import numpy as np
-from sklearn.linear_model import LinearRegression
+
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
@@ -25,7 +25,7 @@ X_train=X[:800]
 X_test=X[800:]
 Y_train=Y[:800]
 Y_test=Y[800:]
-model=LinearRegression()
+model=DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
 model.fit(X_train,Y_train)
 prediction=model.predict(X_test)
 print(mean_squared_error(Y_test,prediction))
@@ -36,6 +36,10 @@ plt.ylabel('survived')
 plt.legend()
 plt.title('titanic data')
 plt.show()
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(Y_test,prediction))
+print(accuracy_score(Y_test,prediction))
 
 
 

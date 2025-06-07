@@ -1,3 +1,6 @@
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -20,3 +23,6 @@ print("intercept",model.intercept_) #this is the value of the intercept
 plt.scatter(diabetes_X_test,diabetes_Y_test)
 plt.plot(diabetes_X_test,diabetes_Y_predict)
 plt.show()
+
+
+

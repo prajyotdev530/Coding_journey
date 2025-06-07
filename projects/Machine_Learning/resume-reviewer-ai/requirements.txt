@@ -1,6 +1,0 @@
-streamlit
-PyMuPDF
-transformers
-langchain
-huggingface_hub
-langchain_community

@@ -25,5 +25,15 @@ from sklearn.preprocessing import StandardScaler
 sc=StandardScaler()
 X_train=sc.fit_transform(x_train)
 X_test=sc.transform(x_test)
+ann=tf.keras.models.Sequential()
+ann.add(tf.keras.layers.Dense(units=6,activation='relu'))
+ann.add(tf.keras.layers.Dense(units=6,activation='relu'))
+ann.add(tf.keras.layers.Dense(units=1,activation='sigmoid'))  #if more than binary then the activation is softmax
+ann.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy']) #if not binary then the loss is categorical_crossentroy
+ann.fit(X_train,y_train,batch_size=128,epochs=100)
+ann.predict(X_test)
+print(X_test)
+
+print(ann.predict(sc.transform([[1,0,0,600,1,40,3,60000,2,1,1,50000]])))
 
 
